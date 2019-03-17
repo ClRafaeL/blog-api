@@ -1,6 +1,6 @@
 #   Blog-api
 
-Blog e uma api do tipo REST que retorna mesagens no padrão json.
+Blog é uma api do tipo REST que retorna mesagens no padrão json.
 
 ## Instalação 
 

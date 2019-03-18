@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# Third
 from setuptools import find_packages, setup
 
 __version__ = '0.1.0'
@@ -8,7 +5,12 @@ __description__ = 'Blog Api'
 __long_description__ = 'API REST de um blog'
 
 __author__ = 'Claudio Rafael'
-__author_email__ = 'c.rafael@gmail.com'
+__author_email__ = 'c.rafaelneto7@gmail.com'
+
+testing = [
+    'pytest',
+    'pytest-cov',
+]
 
 setup(
     name='api',
@@ -36,4 +38,9 @@ setup(
         'Programming Language :: Python :: 3.6',
         'License :: OSI Approved :: MIT License',
     ],
+    setup_requires=['pytest-runner'],
+    tests_require=['pytest'],
+    extras_require={
+        'testing': testing,
+    },
 )

@@ -16,7 +16,7 @@ Crie um ambiente dedicado à aplicação e instale as dependências necessárias
 ``` bash
 $ cd blog-api
 $ cd virtualenv -p python3.6 env
-$ ./env/bin/pip install -r requirements.txt
+$ ./env/bin/pip install -r requirements/prod.txt
 ```
 
 ## Uso

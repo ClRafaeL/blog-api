@@ -1,6 +1,7 @@
 from flask import Flask
 from config import config
 from .api import configure_api
+from .db import db
 
 def create_app(config_name):
     app = Flask('api-users')

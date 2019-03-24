@@ -25,9 +25,7 @@ config = {
 }
 
 class Config:
-    # adicione após as outras chaves
     MONGODB_HOST = getenv('MONGODB_URI')
 
 class TestingConfig:
-    # adicione após as outras chaves
     MONGODB_HOST = getenv('MONGODB_URI_TEST')

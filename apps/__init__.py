@@ -8,6 +8,8 @@ def create_app(config_name):
 
     app.config.from_object(config[config_name])
 
+    db.init_app(app)
+
     configure_api(app)
 
     return app

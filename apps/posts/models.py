@@ -1,8 +1,8 @@
 from datetime import datetime
 from apps.db import db
 from mongoengine import (
-    DateTimeField,
-    StringField
+     DateTimeField,
+     StringField
 )
 
 class PostMixin(db.Document):

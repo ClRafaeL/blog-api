@@ -4,7 +4,7 @@ from .api import configure_api
 from .db import db
 
 def create_app(config_name):
-    app = Flask('api-users')
+    app = Flask('api-blog')
 
     app.config.from_object(config[config_name])
 

@@ -4,13 +4,13 @@ from mongoengine.errors import NotUniqueError, ValidationError
 from apps.messages import MSG_RESOURCE_CREATED
 from .models import Post
 from .schemas import PostSchema
-
 from apps.responses import (
     resp_already_exists,
     resp_exception,
     resp_data_invalid,
     resp_ok,
-    resp_does_not_exist
+    resp_does_not_exist,
+    resp_bad_input
 )
 
 class Route(Resource):
@@ -34,7 +34,7 @@ class Route(Resource):
             return resp_already_exists('Posts', '')
 
         except ValidationError as e:
-            return resp_exception('Posts', str(e))
+            return resp_bad_input('Posts', str(e))
 
         except Exception as e:
             return resp_exception('Posts', str(e))
@@ -56,7 +56,7 @@ class Route_with_id(Resource):
             post = Post.objects.get(id=id)
         
         except ValidationError as e:
-            return resp_exception('Posts', str(e))
+            return resp_bad_input('Posts', str(e))
 
         except Post.DoesNotExist as e:
             return resp_does_not_exist('Posts', str(e))
@@ -79,7 +79,7 @@ class Route_with_id(Resource):
                 )
         
         except ValidationError as e:
-            return resp_exception('Posts', str(e))
+            return resp_bad_input('Posts', str(e))
 
         except Post.DoesNotExist as e:
             return resp_does_not_exist('Posts', str(e))
@@ -104,7 +104,7 @@ class Route_with_id(Resource):
                 )
         
         except ValidationError as e:
-            return resp_exception('Posts', str(e))
+            return resp_bad_input('Posts', str(e))
 
         except Post.DoesNotExist as e:
             return resp_does_not_exist('Posts', str(e))

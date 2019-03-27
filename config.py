@@ -7,25 +7,15 @@ class Config:
 class DevelopmentConfig(Config):
     FLASK_ENV = 'development'
     DEBUG = True
-
-config = {
-    'development': DevelopmentConfig,
-    'default': DevelopmentConfig
-}
+    MONGODB_HOST = getenv('MONGODB_URI')
 
 class TestingConfig(Config):
     FLASK_ENV = 'testing'
     TESTING = True
-
+    MONGODB_HOST = getenv('MONGODB_URI_TEST')
 
 config = {
     'development': DevelopmentConfig,
     'testing': TestingConfig,
     'default': DevelopmentConfig
 }
-
-class Config:
-    MONGODB_HOST = getenv('MONGODB_URI')
-
-class TestingConfig:
-    MONGODB_HOST = getenv('MONGODB_URI_TEST')

@@ -24,5 +24,6 @@ $ ./env/bin/pip install -r requirements/prod.txt
 Altere as informações do arquivo *.env-example* e renomeie para *.env*.
 
 ```bash
+$ docker run --name mongo-latest -p 27017:27017 -d mongo
 $ ./env/bin/python3.6 application.py
 ```

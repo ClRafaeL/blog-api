@@ -1,7 +1,6 @@
 from flask import jsonify
 from .messages import MSG_INVALID_DATA, MSG_DOES_NOT_EXIST, MSG_EXCEPTION, MSG_ALREADY_EXISTS, MSG_RESOURCE_CREATED
 
-
 def resp_data_invalid(resource :str, errors: dict, msg: str = MSG_INVALID_DATA):
     '''
     Responses 400 Bad Request
@@ -13,6 +12,21 @@ def resp_data_invalid(resource :str, errors: dict, msg: str = MSG_INVALID_DATA):
         'resource': resource,
         'message': msg,
         'errors': errors,
+    })
+    resp.status_code = 400
+    return resp
+
+def resp_bad_input(resource :str, description :str = '', msg :str = MSG_EXCEPTION):
+    '''
+    Responses 400
+    '''
+
+    if not isinstance(resource, str):
+        raise ValueError('O recurso precisa ser uma string.')
+    resp = jsonify({
+        'resource': resource,
+        'message': msg,
+        'description': description
     })
     resp.status_code = 400
     return resp
@@ -71,7 +85,6 @@ def resp_ok(resource :str, message :str, data=None, **extras):
     response.update(extras)
     resp = jsonify(response)
     resp.status_code = 200
-
     return resp
 
 def reso_created(resource :str, message :str, data=None, msg :str = MSG_RESOURCE_CREATED, **extras):
@@ -85,5 +98,4 @@ def reso_created(resource :str, message :str, data=None, msg :str = MSG_RESOURCE
     response.update(extras)
     resp = jsonify(response)
     resp.status_code = 201
-
     return resp

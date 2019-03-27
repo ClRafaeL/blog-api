@@ -1,3 +1,5 @@
+import pytest
+
 def test_find_all(client):
     response = client.get('/posts/')
 
@@ -32,4 +34,4 @@ def test_put_bad_resquest(client):
     response = client.put('/posts/5c982631e7798941208914a1')
 
     assert response.status_code == 400
-
+    

@@ -1,3 +1,7 @@
+pymongo
+flask-mongoengine
+mongoengine
+marshmallow
 flask
 python-dotenv
 flask-restful

@@ -1,1 +1,8 @@
+pymongo
+flask-mongoengine
+mongoengine
+marshmallow
 pytest
+flask
+python-dotenv
+flask-restful

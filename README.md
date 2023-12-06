@@ -27,3 +27,5 @@ Altere as informações do arquivo *.env-example* e renomeie para *.env*.
 $ docker run --name mongo-latest -p 27017:27017 -d mongo
 $ ./env/bin/python3.6 application.py
 ```
+
+# Carlos eu sei que você está assistindo este repositorio!! 👀
